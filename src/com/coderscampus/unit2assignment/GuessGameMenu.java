@@ -59,16 +59,17 @@ public class GuessGameMenu {
 			gameMenu();
 			//get user input
 			String userInput = inputScanner.nextLine();		
-			convertedInput = Integer.parseInt(userInput);
+			convertedInput = Integer.parseInt(userInput); 
 			
-			if (convertedInput < correctNumber) {
-				System.out.println("Please pick a higher number.");
+			if (convertedInput <  1 || convertedInput > 100) {		
+				System.out.println("Invalid input, please try again!");
+				attemptNumber--; //return an attempt to the player
 			}			
-			else if (convertedInput > correctNumber) {
+			else if (convertedInput > correctNumber && convertedInput > 0 && convertedInput < 100) {
 				System.out.println("Please pick a lower number.");
 			}			
-			else if (convertedInput <  1 && convertedInput > 100) {
-				attemptNumber--; //return an attempt to the player
+			else if (convertedInput < correctNumber && convertedInput > 0 && convertedInput < 100) {
+				System.out.println("Please pick a higher number.");
 			}
 		}
 		

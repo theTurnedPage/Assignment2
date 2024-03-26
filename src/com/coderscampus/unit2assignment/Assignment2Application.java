@@ -6,9 +6,6 @@ public class Assignment2Application {
 		
 		//call method to start the game
 		GuessGameMenu.mainInput();
-				
-	
-
 	}
 
 }
