@@ -3,7 +3,11 @@ package com.coderscampus.unit2assignment;
 public class Assignment2Application {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub		
+		
+		//call method to start the game
+		GuessGameMenu.getInput();
+				
+	
 
 	}
 
