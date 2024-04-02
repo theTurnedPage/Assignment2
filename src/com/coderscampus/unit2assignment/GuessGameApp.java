@@ -9,6 +9,6 @@ public class GuessGameApp {
 		Random randomMaker = new Random();
 		//assign value to variable, then return it to the game menu
 		int randomNumber = randomMaker.nextInt(101);		
-		return GuessGameMenu.gameInput(randomNumber); 	
+		return randomNumber; 	
 	}
 }

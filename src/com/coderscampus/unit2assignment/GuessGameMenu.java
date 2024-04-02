@@ -46,10 +46,11 @@ public class GuessGameMenu {
 				+ "Enter a number between 1 and 100.\n");									
 	}
 	
-	public static int gameInput(int randomNumber) {
+	public static void gameInput(int randomNumber) {
 		//initialize variables, create objects
 		int convertedInput = 0;
-		int correctNumber = randomNumber;
+		int correctNumber = GuessGameApp.makeNumber(); //assign correct answer from method
+		int attemptsLeft = 5;
 		Scanner inputScanner = new Scanner(System.in);
 		
 		
@@ -64,22 +65,24 @@ public class GuessGameMenu {
 			if (convertedInput <  1 || convertedInput > 100) {		
 				System.out.println("Invalid input, please try again!");
 				attemptNumber--; //return an attempt to the player
-			}			
+			}						
 			else if (convertedInput > correctNumber && convertedInput > 0 && convertedInput < 100) {
-				System.out.println("Please pick a lower number.");
+				attemptsLeft--;
+				System.out.println("Please pick a lower number.\nYou have " + attemptsLeft + " guesses remaining.");
 			}			
 			else if (convertedInput < correctNumber && convertedInput > 0 && convertedInput < 100) {
-				System.out.println("Please pick a higher number.");
+				attemptsLeft--;
+				System.out.println("Please pick a higher number.\nYou have " + attemptsLeft + " guesses remaining.");
 			}
 		}
 		
-		if (convertedInput == correctNumber){
+		if (convertedInput == correctNumber) {
 			System.out.println("You win! Correct answer is: " + correctNumber);
-		} else {
+		}
+		else {		
 			System.out.println("You lose! The correct answer is: " + correctNumber);
 		}
-		
-		return correctNumber;
+				
 
 	}
 	
